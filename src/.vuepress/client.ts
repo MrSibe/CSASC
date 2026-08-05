@@ -1,6 +1,5 @@
-import { defineClientConfig } from "vuepress/client";
-import { onMounted } from "vue";
-import { useRouter } from "vue-router";
+import { defineClientConfig, usePageData } from "vuepress/client";
+import { onMounted, watch } from "vue";
 
 interface Meteor {
   x: number;
@@ -20,7 +19,8 @@ interface Meteor {
  */
 export default defineClientConfig({
   setup() {
-    const router = useRouter();
+    // 使用 @vuepress/client 提供的 usePageData 判断首页，避免直接依赖 vue-router
+    const page = usePageData();
 
     let meteorCanvas: HTMLCanvasElement | null = null;
     let meteorRaf = 0;
@@ -121,16 +121,16 @@ export default defineClientConfig({
       }, 120);
     };
 
-    const updateHome = () => {
-      const isHome = router.currentRoute.value.path === "/";
+    const apply = () => {
+      const isHome = page.value.path === "/";
       if (meteorCanvas) meteorCanvas.style.opacity = isHome ? "1" : "0";
       if (isHome) window.setTimeout(typeTagline, 200);
     };
 
     onMounted(() => {
       startMeteors();
-      updateHome();
-      router.afterEach(updateHome);
+      apply();
+      watch(() => page.value.path, apply);
     });
   },
 });
