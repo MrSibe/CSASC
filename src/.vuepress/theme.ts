@@ -4,14 +4,17 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  hostname: "https://skywatcher.pages.dev",
+
   darkmode: "enable",
+
   author: {
     name: "中国观天者小行星搜寻活动",
   },
+
   iconAssets: "fontawesome-with-brands",
 
-  logo: "./chinese-logo_2_3.png",
+  logo: "/中文徽章.png",
 
   docsDir: "src",
 
@@ -19,169 +22,79 @@ export default hopeTheme({
   navbar,
 
   // 侧边栏
-  sidebar: false,
+  sidebar,
 
   // 页脚
-  footer: "中国观天者小行星搜寻活动",
-  displayFooter: true,
+  footer: "从现在开始搜寻属于你的小行星！ | 版权所有 © 2022-2024 CSASC",
+  displayFooter: false,
 
-  // 加密配置
-  encrypt: {
-    config: {
-      "/demo/encrypt.html": ["1234"],
-    },
-  },
-
-  // 多语言配置
-  // metaLocales: {
-  //   editLink: "在 GitHub 上编辑此页",
-  // },
-
-  // 如果想要实时查看任何改变，启用它。注: 这对更新性能有很大负面影响
-  // hotReload: true,
   print: false,
-  // 在这里配置主题提供的插件
+
+  // 插件配置
   plugins: {
-    // 注意: 仅用于测试! 你必须自行生成并在生产环境中使用自己的评论服务
     comment: false,
 
     components: {
       components: ["Badge", "VPCard"],
     },
 
-    // 此处开启了很多功能用于演示，你应仅保留用到的功能。
     markdownImage: {
       figure: true,
       lazyload: true,
       size: true,
     },
 
-    // markdownMath: {
-    //   // 启用前安装 katex
-    //   type: "katex",
-    //   // 或者安装 mathjax-full
-    //   type: "mathjax",
-    // },
-
-    // 此功能被开启用于演示，你应仅当使用时保留。
-    markdownTab: true,
-
-    // 此处开启了很多功能用于演示，你应仅保留用到的功能。
     mdEnhance: {
       align: true,
       attrs: true,
       component: true,
-      demo: true,
-      include: true,
       mark: true,
-      plantuml: true,
-      spoiler: true,
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
-      ],
       sub: true,
       sup: true,
       tasklist: true,
       vPre: true,
-
-      // 在启用之前安装 chart.js
-      // chart: true,
-
-      // insert component easily
-
-      // 在启用之前安装 echarts
-      // echarts: true,
-
-      // 在启用之前安装 flowchart.ts
-      // flowchart: true,
-
-      // gfm requires mathjax-full to provide tex support
-      // gfm: true,
-
-      // 在启用之前安装 mermaid
-      // mermaid: true,
-
-      // playground: {
-      //   presets: ["ts", "vue"],
-      // },
-
-      // 在启用之前安装 @vue/repl
-      // vuePlayground: true,
-
-      // install sandpack-vue3 before enabling it
-      // sandpack: true,
     },
 
-    // 如果你需要 PWA。安装 @vuepress/plugin-pwa 并取消下方注释
-    // pwa: {
-    //   favicon: "/favicon.ico",
-    //   cacheHTML: true,
-    //   cacheImage: true,
-    //   appendBase: true,
-    //   apple: {
-    //     icon: "/assets/icon/apple-icon-152.png",
-    //     statusBarColor: "black",
-    //   },
-    //   msTile: {
-    //     image: "/assets/icon/ms-icon-144.png",
-    //     color: "#ffffff",
-    //   },
-    //   manifest: {
-    //     icons: [
-    //       {
-    //         src: "/assets/icon/chrome-mask-512.png",
-    //         sizes: "512x512",
-    //         purpose: "maskable",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-mask-192.png",
-    //         sizes: "192x192",
-    //         purpose: "maskable",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-512.png",
-    //         sizes: "512x512",
-    //         type: "image/png",
-    //       },
-    //       {
-    //         src: "/assets/icon/chrome-192.png",
-    //         sizes: "192x192",
-    //         type: "image/png",
-    //       },
-    //     ],
-    //     shortcuts: [
-    //       {
-    //         name: "Demo",
-    //         short_name: "Demo",
-    //         url: "/demo/",
-    //         icons: [
-    //           {
-    //             src: "/assets/icon/guide-maskable.png",
-    //             sizes: "192x192",
-    //             purpose: "maskable",
-    //             type: "image/png",
-    //           },
-    //         ],
-    //       },
-    //     ],
-    //   },
-    // },
+    // PWA：离线访问 + 可安装
+    pwa: {
+      favicon: "/icons/icon-192.png",
+      themeColor: "#0a0f1e",
+      cacheHTML: true,
+      // 允许离线缓存标题字体（2.2MB）与教程截图
+      maxSize: 4096,
+      apple: {
+        icon: "/icons/apple-icon-180.png",
+        statusBarColor: "black",
+      },
+      manifest: {
+        name: "中国观天者小行星搜寻项目",
+        short_name: "CSASC",
+        description: "中国观天者小行星搜寻项目（CSASC）官方活动官网。",
+        theme_color: "#0a0f1e",
+        background_color: "#0a0f1e",
+        icons: [
+          {
+            src: "/icons/icon-192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "/icons/icon-512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+        ],
+      },
+    },
 
-    // 如果你需要幻灯片，安装 @vuepress/plugin-revealjs 并取消下方注释
-    // revealjs: {
-    //   plugins: ["highlight", "math", "search", "notes", "zoom"],
-    // },
+    // SEO：统一分享卡片图片为项目徽章
+    seo: {
+      fallBackImage: "https://skywatcher.pages.dev/icons/icon-512.png",
+      ogp: (ogp) => {
+        ogp["og:image"] = "https://skywatcher.pages.dev/icons/icon-512.png";
+
+        return ogp;
+      },
+    },
   },
 });

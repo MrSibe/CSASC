@@ -2,14 +2,15 @@
 home: true
 icon: home
 title: 主页
-heroImage: ./chinese-logo_1_2.png
-heroImageDark: ./chinese-logo_1_2.png
+heroImage: /chinese-logo.png
+heroImageDark: /chinese-logo.png
 bgImage: ./bg2.jpg
 bgImageDark: ./bg2.jpg
 bgImageStyle:
   background-attachment: fixed
 heroText: 小行星搜索项目
 tagline: 从现在开始搜寻属于你的小行星！
+heroFullScreen: true
 actions:
   - text: 活动介绍
     icon: lightbulb
@@ -36,12 +37,11 @@ highlights:
 
       - title: 下载地址
         icon: download
-        details: Astrometrica巡天软件下载
-        link: https://mrsibe.github.io/sources/Astrometrica_CSASC.exe
+        details: Astrometrica巡天软件官方下载
+        link: https://iasc.cosmosearch.org/Content/Distributables/IASC-Astrometrica-Installer-Win-10.zip
 
   - header: “老鸟”带路，无惧艰险
     description: 精心制作的大量通俗易懂的教学资源，一个小时就可以掌握小行星搜寻
-    image: /assets/image/ui.svg
     bgImage: ./main.png
     bgImageDark: ./main.png
     highlights:
@@ -59,14 +59,14 @@ highlights:
         icon: cloud
         details: 更多天文高手尽在CSASC官方交流群
         link: https://qm.qq.com/q/PkyaqKKv0e
-copyright: false
-footer: 从现在开始搜寻属于你的小行星! | 版权所有 © 2022-2024 CSASC
 ---
+
 # 合作伙伴
-<h1> </h1>
-<p style="text-align: center; margin: 0 auto;">
-	<img src="/cha.png" width="20%"></img>
-	<img src="/campaign.png" width="100%"></img>
-</p>
 
+::: center
 
+![CSASC 中国观天者小行星搜寻项目](/cha.png =40%x)
+
+![IASC 活动](/campaign.png =85%x)
+
+:::

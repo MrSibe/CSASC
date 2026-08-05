@@ -8,6 +8,6 @@ export default navbar([
   {
     text: "IASC官网",
     icon: "book",
-    link: "http://iasc.cosmosearch.org/",
+    link: "https://iasc.cosmosearch.org/",
   },
 ]);

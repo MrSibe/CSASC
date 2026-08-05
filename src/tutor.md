@@ -38,7 +38,7 @@ IASC活动官网：[Home Page - IASC: International Astronomical Search Collabor
 
 登录后需要下载本次活动所需要的软件。
 
-下载和安装Astrometrica的说明
+### 下载和安装 Astrometrica
 
 1. 进入IASC的网站http://iasc.cosmosearch.org/，然后单击Astrometrica。
 
@@ -57,6 +57,8 @@ IASC活动官网：[Home Page - IASC: International Astronomical Search Collabor
 6.此时Astrometrica已下载但并不能开始小行星搜寻，因为还没有下载小行星数据库。
 
 ![](/tutor/8.png)
+
+### 常见问题
 
 双击软件启动后的这个界面是怎么回事，是否应该关闭？
 

@@ -1,1 +1,58 @@
-// you can change colors here
+// 深空星际风 · 配色与字体变量（注入为 --vp-* CSS 变量）
+
+// 字体
+// 标题使用本地化站酷小薇体（见 index.scss @font-face），回退衬线中文字体
+$vp-font-heading: '"ZCOOL XiaoWei", "Noto Serif SC", "Songti SC", "SimSun", serif';
+// 正文使用系统无衬线栈，不引入外部依赖
+$vp-font: '"PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", "Noto Sans SC", "Segoe UI", system-ui, sans-serif';
+$vp-font-mono: '"JetBrains Mono", ui-monospace, "Menlo", "Consolas", monospace';
+
+// 背景
+$vp-c-bg: (
+  light: #f4f7ff,
+  dark: #0a0f1e,
+);
+$vp-c-bg-alt: (
+  light: #e9effc,
+  dark: #0d1428,
+);
+$vp-c-bg-elv: (
+  light: #ffffff,
+  dark: #111a33,
+);
+
+// 文字
+$vp-c-text: (
+  light: #1f2d3d,
+  dark: #dbe4f5,
+);
+
+// 边框与分隔线
+$vp-c-border: (
+  light: #c9d6ec,
+  dark: #22304f,
+);
+$vp-c-gutter: (
+  light: #dfe7f5,
+  dark: #1a2440,
+);
+
+// 阴影
+$vp-c-shadow: (
+  light: rgb(31 64 130 / 12%),
+  dark: rgb(0 0 0 / 45%),
+);
+
+// 控件状态
+$vp-c-control: (
+  light: rgb(61 126 255 / 8%),
+  dark: rgb(88 166 255 / 10%),
+);
+$vp-c-control-hover: (
+  light: rgb(61 126 255 / 15%),
+  dark: rgb(88 166 255 / 18%),
+);
+$vp-c-control-disabled: (
+  light: #eaeaea,
+  dark: #363636,
+);
