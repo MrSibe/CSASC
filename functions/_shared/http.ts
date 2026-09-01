@@ -17,6 +17,8 @@ export interface CampaignConfig {
   title: string;
   opensAt: string;
   closesAt: string;
+  activityStartsAt: string;
+  activityEndsAt: string;
   isOpen: boolean;
   configured: boolean;
   status: "open" | "not_started" | "closed" | "configuration_error";
@@ -27,6 +29,14 @@ export function getCampaignConfig(env: PublicEnv, now = new Date()): CampaignCon
   const title = env.CAMPAIGN_TITLE?.trim() || (code ? `第 ${code} 期` : "报名活动");
   const opensAtDate = env.REGISTRATION_OPENS_AT ? new Date(env.REGISTRATION_OPENS_AT) : null;
   const closesAtDate = env.REGISTRATION_CLOSES_AT ? new Date(env.REGISTRATION_CLOSES_AT) : null;
+  const activityStartsAtDate = env.ACTIVITY_STARTS_AT ? new Date(env.ACTIVITY_STARTS_AT) : null;
+  const activityEndsAtDate = env.ACTIVITY_ENDS_AT ? new Date(env.ACTIVITY_ENDS_AT) : null;
+  const activityConfigured =
+    activityStartsAtDate &&
+    activityEndsAtDate &&
+    !Number.isNaN(activityStartsAtDate.getTime()) &&
+    !Number.isNaN(activityEndsAtDate.getTime()) &&
+    activityStartsAtDate < activityEndsAtDate;
   const configured = Boolean(
     code &&
       opensAtDate &&
@@ -42,6 +52,8 @@ export function getCampaignConfig(env: PublicEnv, now = new Date()): CampaignCon
       title,
       opensAt: env.REGISTRATION_OPENS_AT ?? "",
       closesAt: env.REGISTRATION_CLOSES_AT ?? "",
+      activityStartsAt: env.ACTIVITY_STARTS_AT ?? "",
+      activityEndsAt: env.ACTIVITY_ENDS_AT ?? "",
       isOpen: false,
       configured: false,
       status: "configuration_error",
@@ -54,6 +66,8 @@ export function getCampaignConfig(env: PublicEnv, now = new Date()): CampaignCon
     title,
     opensAt: opensAtDate.toISOString(),
     closesAt: closesAtDate.toISOString(),
+    activityStartsAt: activityConfigured ? activityStartsAtDate.toISOString() : "",
+    activityEndsAt: activityConfigured ? activityEndsAtDate.toISOString() : "",
     isOpen,
     configured,
     status: isOpen ? "open" : now < opensAtDate ? "not_started" : "closed",

@@ -4,6 +4,12 @@
 <section class="registration" data-registration-form aria-labelledby="registration-title">
 	<header>
 		<h1 id="registration-title" data-campaign-title>填写报名信息</h1>
+		<dl class="campaign-times">
+			<div><dt>报名开放</dt><dd data-opens-at>待公布</dd></div>
+			<div><dt>报名截止</dt><dd data-closes-at>待公布</dd></div>
+			<div><dt>活动开始</dt><dd data-activity-starts-at>待公布</dd></div>
+			<div><dt>活动结束</dt><dd data-activity-ends-at>待公布</dd></div>
+		</dl>
 		<p>请由本人或队长一次填写完整。标有“必填”的项目必须填写。所有内容请使用英文填写（姓名填中文拼音）。</p>
 		<p class="status" data-status aria-live="polite">正在读取报名状态…</p>
 	</header>
@@ -30,8 +36,8 @@
 	</div>
 
 	<div data-intro hidden>
-		<details class="guidelines" open>
-			<summary>报名须知</summary>
+		<div class="guidelines">
+			<h2 class="guidelines-title">报名须知</h2>
 			<div class="guidelines-body">
 				<p>报名分为<strong>个人报名</strong>与<strong>团队报名</strong>两种形式：</p>
 				<ul>
@@ -47,7 +53,7 @@
 					<li>报名后不能自行在线查询、修改或取消。如资料有误或希望删除个人资料，请通过官方交流群联系管理员，并提供报名编号核对。</li>
 				</ul>
 			</div>
-		</details>
+		</div>
 		<div class="intro-actions">
 			<button class="primary" type="button" data-continue>我已阅读并知晓，进入报名表</button>
 			<p class="help">请完整阅读以上须知后再进入报名表。</p>
@@ -164,6 +170,8 @@
 		campaignTitle: string;
 		opensAt: string;
 		closesAt: string;
+		activityStartsAt: string;
+		activityEndsAt: string;
 		isOpen: boolean;
 		status: 'open' | 'not_started' | 'closed' | 'configuration_error';
 		turnstileSiteKey: string;
@@ -374,6 +382,10 @@
 				const campaignTitle = root.querySelector<HTMLElement>('[data-campaign-title]');
 				if (campaignTitle) campaignTitle.textContent = config.campaignTitle;
 				document.title = config.campaignTitle;
+				root.querySelector<HTMLElement>('[data-opens-at]')!.textContent = formatBeijingTime(config.opensAt);
+				root.querySelector<HTMLElement>('[data-closes-at]')!.textContent = formatBeijingTime(config.closesAt);
+				root.querySelector<HTMLElement>('[data-activity-starts-at]')!.textContent = formatBeijingTime(config.activityStartsAt);
+				root.querySelector<HTMLElement>('[data-activity-ends-at]')!.textContent = formatBeijingTime(config.activityEndsAt);
 				if (config.isOpen) {
 					intro.hidden = false;
 					root.querySelector<HTMLElement>('[data-closed]')!.hidden = true;
@@ -458,21 +470,25 @@
 	.registration { margin-block: 2rem; }
 	.registration > header { margin-bottom: 1.5rem; }
 	.registration h1 { margin-block: 0; font-size: var(--sl-text-4xl); font-weight: 700; line-height: 1.25; }
+	.campaign-times { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.4rem 2rem; margin-block: 0.75rem 0; padding: 0; }
+	.campaign-times div { display: flex; gap: 0.6rem; align-items: baseline; }
+	.campaign-times dt { color: var(--sl-color-gray-3); font-size: var(--sl-text-sm); }
+	.campaign-times dd { margin: 0; font-size: var(--sl-text-sm); }
 	.registration h2, .registration h3, .registration p { margin-block: 0; }
 	.registration > header > p { margin-top: 0.5rem; }
 	.status { color: var(--sl-color-gray-3); }
 	.status[data-open='true'] { color: var(--sl-color-green-high); }
 	.registration form { display: grid; gap: 1.25rem; }
-	.registration fieldset, .registration .success, .registration .notice, .registration .field[data-team-name], .registration details.guidelines {
+	.registration fieldset, .registration .success, .registration .notice, .registration .field[data-team-name], .registration .guidelines {
 		margin: 0; padding: 1rem; border: 1px solid var(--sl-color-hairline); border-radius: 0.5rem; background: var(--sl-color-bg-nav);
 	}
-	.registration details.guidelines { margin-block: 0; }
-	.registration details.guidelines summary { cursor: pointer; font-weight: 700; }
-	.registration details.guidelines .guidelines-body { margin-top: 0.75rem; }
-	.registration details.guidelines p { margin-block: 0.5rem; }
-	.registration details.guidelines ul { margin-block: 0.5rem; padding-left: 1.25rem; }
-	.registration details.guidelines li { margin-block: 0.3rem; }
-	.registration details.guidelines .important { color: var(--sl-color-red-high); }
+	.registration .guidelines { margin-block: 0; }
+	.registration .guidelines .guidelines-title { margin-block: 0; font-size: var(--sl-text-h4); font-weight: 700; }
+	.registration .guidelines .guidelines-body { margin-top: 0.75rem; }
+	.registration .guidelines p { margin-block: 0.5rem; }
+	.registration .guidelines ul { margin-block: 0.5rem; padding-left: 1.25rem; }
+	.registration .guidelines li { margin-block: 0.3rem; }
+	.registration .guidelines .important { color: var(--sl-color-red-high); }
 	.intro-actions { margin-top: 1.5rem; text-align: center; }
 	.intro-actions .help { margin-top: 0.75rem; }
 	.registration legend { padding-inline: 0.35rem; font-weight: 700; }
@@ -508,5 +524,5 @@
 	.success dt { color: var(--sl-color-gray-3); }
 	.turnstile { margin-top: 1rem; min-height: 65px; }
 	[hidden] { display: none !important; }
-	@media (max-width: 42rem) { .choice-grid, .field-grid { grid-template-columns: 1fr; } .notice { align-items: flex-start; flex-direction: column; } }
+	@media (max-width: 42rem) { .choice-grid, .field-grid { grid-template-columns: 1fr; } .notice { align-items: flex-start; flex-direction: column; } .campaign-times { grid-template-columns: 1fr; } }
 </style>

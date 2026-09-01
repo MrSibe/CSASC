@@ -9,6 +9,8 @@ export async function onRequestGet(context: PagesContext<PublicEnv>): Promise<Re
     campaignTitle: campaign.title,
     opensAt: campaign.opensAt,
     closesAt: campaign.closesAt,
+    activityStartsAt: campaign.activityStartsAt,
+    activityEndsAt: campaign.activityEndsAt,
     isOpen: campaign.isOpen,
     status: campaign.status,
     teamMinMembers: TEAM_MIN_MEMBERS,

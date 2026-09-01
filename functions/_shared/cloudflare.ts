@@ -21,6 +21,8 @@ export interface PublicEnv {
   CAMPAIGN_TITLE?: string;
   REGISTRATION_OPENS_AT?: string;
   REGISTRATION_CLOSES_AT?: string;
+  ACTIVITY_STARTS_AT?: string;
+  ACTIVITY_ENDS_AT?: string;
   TURNSTILE_SITE_KEY?: string;
   TURNSTILE_SECRET?: string;
 }
