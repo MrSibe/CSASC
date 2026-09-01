@@ -7,6 +7,11 @@
 	--sl-color-bg-sidebar: #0b1120;
 }
 
+/* 不再使用左侧栏，内容不需要为侧栏留出偏移。 */
+html[data-has-sidebar] {
+	--sl-content-inline-start: 0rem;
+}
+
 :root[data-theme='light'] {
 	--sl-color-accent-low: #fff2c9;
 	--sl-color-accent: #765700;

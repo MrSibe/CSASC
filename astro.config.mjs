@@ -22,6 +22,19 @@ export default defineConfig({
 				},
 			},
 			customCss: ['./src/styles/custom.css'],
+			// 不使用站点内搜索，顶栏不显示搜索框。
+			pagefind: false,
+			// 不显示右侧目录。
+			tableOfContents: false,
+			// 页脚不显示上一页/下一页。
+			pagination: false,
+			// 导航移入顶栏：自定顶栏，去掉左右侧栏。
+			components: {
+				Header: './src/components/Header.astro',
+				PageFrame: './src/components/PageFrame.astro',
+				Sidebar: './src/components/Sidebar.astro',
+				Pagination: './src/components/Sidebar.astro',
+			},
 			head: [
 				{
 					tag: 'link',
@@ -34,21 +47,6 @@ export default defineConfig({
 				{
 					tag: 'meta',
 					attrs: { property: 'og:image', content: 'https://skywatcher.pages.dev/icons/icon-512.png' },
-				},
-			],
-			sidebar: [
-				{
-					label: '网站导航',
-					items: [
-						{ label: '首页', slug: '' },
-						{ label: '活动介绍', slug: 'portfolio' },
-						{ label: '搜寻教程', slug: 'tutor' },
-						{ label: '报名参与', slug: 'application' },
-					],
-				},
-				{
-					label: '相关链接',
-					items: [{ label: 'IASC 官网', link: 'https://iasc.cosmosearch.org/' }],
 				},
 			],
 		}),

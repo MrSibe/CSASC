@@ -1,0 +1,85 @@
+---
+import SiteTitle from 'virtual:starlight/components/SiteTitle';
+import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
+
+const navItems = [
+	{ label: '首页', href: '/' },
+	{ label: '活动介绍', href: '/portfolio' },
+	{ label: '搜寻教程', href: '/tutor' },
+	{ label: '报名参与', href: '/application' },
+	{ label: 'IASC 官网', href: 'https://iasc.cosmosearch.org/' },
+];
+
+const { pathname } = Astro.url;
+const isActive = (href: string) => href.startsWith('http') ? false : pathname === href;
+---
+
+<div class="header">
+	<div class="title-wrapper">
+		<SiteTitle />
+	</div>
+	<nav class="nav" aria-label="主导航">
+		{navItems.map((item) => (
+			<a href={item.href} class:list={{ active: isActive(item.href) }}>{item.label}</a>
+		))}
+	</nav>
+	<div class="actions">
+		<ThemeSelect />
+	</div>
+</div>
+
+<style>
+	@layer starlight.core {
+		.header {
+			display: flex;
+			align-items: center;
+			gap: 1.5rem;
+			height: 100%;
+			padding-inline: var(--sl-nav-pad-x);
+		}
+		.title-wrapper {
+			overflow: clip;
+			padding: 0.25rem;
+			margin: -0.25rem;
+			min-width: 0;
+		}
+		.nav {
+			display: flex;
+			align-items: center;
+			gap: 0.25rem;
+			margin-inline-start: auto;
+			overflow-x: auto;
+			scrollbar-width: none;
+		}
+		.nav a {
+			padding: 0.35rem 0.7rem;
+			border-radius: 0.35rem;
+			font-size: var(--sl-text-sm);
+			font-weight: 500;
+			color: var(--sl-color-gray-3);
+			text-decoration: none;
+			white-space: nowrap;
+		}
+		.nav a:hover {
+			color: var(--sl-color-text);
+			background: var(--sl-color-gray-6, rgba(128, 128, 128, 0.12));
+		}
+		.nav a.active {
+			color: var(--sl-color-text-accent);
+			background: var(--sl-color-accent-low);
+		}
+		.actions {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+		@media (max-width: 50rem) {
+			.header {
+				gap: 0.75rem;
+			}
+			.title-wrapper {
+				flex-shrink: 0;
+			}
+		}
+	}
+</style>

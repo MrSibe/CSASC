@@ -3,8 +3,8 @@
 
 <section class="registration" data-registration-form aria-labelledby="registration-title">
 	<header>
-		<h2 id="registration-title">填写报名信息</h2>
-		<p>请由本人或队长一次填写完整。标有“必填”的项目必须填写。</p>
+		<h1 id="registration-title" data-campaign-title>填写报名信息</h1>
+		<p>请由本人或队长一次填写完整。标有“必填”的项目必须填写。所有内容请使用英文填写（姓名填中文拼音）。</p>
 		<p class="status" data-status aria-live="polite">正在读取报名状态…</p>
 	</header>
 
@@ -29,6 +29,31 @@
 		</dl>
 	</div>
 
+	<div data-intro hidden>
+		<details class="guidelines" open>
+			<summary>报名须知</summary>
+			<div class="guidelines-body">
+				<p>报名分为<strong>个人报名</strong>与<strong>团队报名</strong>两种形式：</p>
+				<ul>
+					<li><strong>个人报名</strong>：优先与其他个人报名的同好随机分配组队，由活动经验丰富的志愿者带领参与活动。</li>
+					<li><strong>团队报名</strong>：团队人数为 2–9 人（含队长），由团队内部决定队长和队名。</li>
+				</ul>
+				<p class="important"><strong>重要提示：</strong>一旦报名，不能退出！请务必仔细考虑是否参与活动。</p>
+				<p><strong>报名前请确认：</strong></p>
+				<ul>
+					<li>个人报名填写本人信息；团队报名由队长一次填写全部成员信息，团队总人数为 2–9 人。</li>
+					<li>报名需要提供每位成员的姓名（填中文拼音，名在前、姓在后）、邮箱和 QQ 号，学校或组织可以不填。所有内容请使用英文填写。</li>
+					<li>资料仅用于本期活动报名、组队、活动联络和必要的历史核对，由项目管理员访问并长期保存。</li>
+					<li>报名后不能自行在线查询、修改或取消。如资料有误或希望删除个人资料，请通过官方交流群联系管理员，并提供报名编号核对。</li>
+				</ul>
+			</div>
+		</details>
+		<div class="intro-actions">
+			<button class="primary" type="button" data-continue>我已阅读并知晓，进入报名表</button>
+			<p class="help">请完整阅读以上须知后再进入报名表。</p>
+		</div>
+	</div>
+
 	<form data-form novalidate hidden>
 		<fieldset>
 			<legend>选择报名方式</legend>
@@ -46,7 +71,7 @@
 
 		<div class="field" data-team-name hidden>
 			<label for="team-name">队名 <small>必填</small></label>
-			<input id="team-name" type="text" maxlength="80" autocomplete="organization" placeholder="例如：猎户座巡天队" />
+			<input id="team-name" type="text" maxlength="80" autocomplete="organization" placeholder="例如：Orion Survey Team" />
 			<p class="field-error" data-error="teamName"></p>
 		</div>
 
@@ -57,13 +82,13 @@
 					<header><h3>报名者</h3></header>
 					<div class="field-grid">
 						<div class="field">
-							<label for="member-1-realName">真实姓名 <small>必填</small></label>
-							<input id="member-1-realName" data-field="realName" type="text" maxlength="50" autocomplete="name" />
+							<label for="member-1-realName">姓名 <small>必填，填中文拼音，名在前，姓在后</small></label>
+							<input id="member-1-realName" data-field="realName" type="text" maxlength="50" autocomplete="name" placeholder="例如：Feiyang Ren" />
 							<p class="field-error" data-error-field="realName"></p>
 						</div>
 						<div class="field">
 							<label for="member-1-email">邮箱 <small>必填</small></label>
-							<input id="member-1-email" data-field="email" type="email" maxlength="254" autocomplete="email" inputmode="email" />
+							<input id="member-1-email" data-field="email" type="email" maxlength="254" autocomplete="email" inputmode="email" placeholder="例如：xxxxxxx@qq.com" />
 							<p class="field-error" data-error-field="email"></p>
 						</div>
 						<div class="field">
@@ -73,7 +98,7 @@
 						</div>
 						<div class="field">
 							<label for="member-1-organization">学校或组织 <small>选填</small></label>
-							<input id="member-1-organization" data-field="organization" type="text" maxlength="120" autocomplete="organization" />
+							<input id="member-1-organization" data-field="organization" type="text" maxlength="120" autocomplete="organization" placeholder="例如：Peking University" />
 							<p class="field-error" data-error-field="organization"></p>
 						</div>
 					</div>
@@ -119,10 +144,10 @@
 				<button class="secondary remove" type="button" data-remove-member>移除</button>
 			</header>
 			<div class="field-grid">
-				<div class="field"><label>真实姓名 <small>必填</small></label><input data-field="realName" type="text" maxlength="50" autocomplete="name" /><p class="field-error" data-error-field="realName"></p></div>
-				<div class="field"><label>邮箱 <small>必填</small></label><input data-field="email" type="email" maxlength="254" autocomplete="email" inputmode="email" /><p class="field-error" data-error-field="email"></p></div>
+				<div class="field"><label>姓名 <small>必填，填中文拼音，名在前，姓在后</small></label><input data-field="realName" type="text" maxlength="50" autocomplete="name" placeholder="例如：Feiyang Ren" /><p class="field-error" data-error-field="realName"></p></div>
+				<div class="field"><label>邮箱 <small>必填</small></label><input data-field="email" type="email" maxlength="254" autocomplete="email" inputmode="email" placeholder="例如：xxxxxxx@qq.com" /><p class="field-error" data-error-field="email"></p></div>
 				<div class="field"><label>QQ 号 <small>必填</small></label><input data-field="qq" type="text" maxlength="12" inputmode="numeric" pattern="[1-9][0-9]{4,11}" /><p class="field-error" data-error-field="qq"></p></div>
-				<div class="field"><label>学校或组织 <small>选填</small></label><input data-field="organization" type="text" maxlength="120" autocomplete="organization" /><p class="field-error" data-error-field="organization"></p></div>
+				<div class="field"><label>学校或组织 <small>选填</small></label><input data-field="organization" type="text" maxlength="120" autocomplete="organization" placeholder="例如：Peking University" /><p class="field-error" data-error-field="organization"></p></div>
 			</div>
 		</article>
 	</template>
@@ -161,6 +186,8 @@
 		const status = root.querySelector<HTMLElement>('[data-status]')!;
 		const submitButton = root.querySelector<HTMLButtonElement>('[data-submit]')!;
 		const submitError = root.querySelector<HTMLElement>('[data-submit-error]')!;
+		const intro = root.querySelector<HTMLElement>('[data-intro]')!;
+		const continueButton = root.querySelector<HTMLButtonElement>('[data-continue]')!;
 		let config: RegistrationConfig | null = null;
 		let idempotencyKey = '';
 		let memberSequence = 1;
@@ -344,11 +371,14 @@
 				config = await response.json() as RegistrationConfig;
 				status.textContent = statusText(config.status);
 				status.dataset.open = String(config.isOpen);
+				const campaignTitle = root.querySelector<HTMLElement>('[data-campaign-title]');
+				if (campaignTitle) campaignTitle.textContent = config.campaignTitle;
+				document.title = config.campaignTitle;
 				if (config.isOpen) {
-					form.hidden = false;
+					intro.hidden = false;
 					root.querySelector<HTMLElement>('[data-closed]')!.hidden = true;
-					await renderTurnstile();
 				} else {
+					intro.hidden = true;
 					form.hidden = true;
 					const closed = root.querySelector<HTMLElement>('[data-closed]')!;
 					closed.hidden = false;
@@ -374,6 +404,12 @@
 			card.querySelector<HTMLInputElement>('[data-field="realName"]')?.focus();
 		});
 		root.querySelector('[data-retry-config]')?.addEventListener('click', loadConfig);
+		continueButton.addEventListener('click', () => {
+			intro.hidden = true;
+			form.hidden = false;
+			form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			void renderTurnstile();
+		});
 
 		form.addEventListener('submit', async (event) => {
 			event.preventDefault();
@@ -421,14 +457,24 @@
 <style>
 	.registration { margin-block: 2rem; }
 	.registration > header { margin-bottom: 1.5rem; }
+	.registration h1 { margin-block: 0; font-size: var(--sl-text-4xl); font-weight: 700; line-height: 1.25; }
 	.registration h2, .registration h3, .registration p { margin-block: 0; }
 	.registration > header > p { margin-top: 0.5rem; }
 	.status { color: var(--sl-color-gray-3); }
 	.status[data-open='true'] { color: var(--sl-color-green-high); }
 	.registration form { display: grid; gap: 1.25rem; }
-	.registration fieldset, .registration .success, .registration .notice, .registration .field[data-team-name] {
+	.registration fieldset, .registration .success, .registration .notice, .registration .field[data-team-name], .registration details.guidelines {
 		margin: 0; padding: 1rem; border: 1px solid var(--sl-color-hairline); border-radius: 0.5rem; background: var(--sl-color-bg-nav);
 	}
+	.registration details.guidelines { margin-block: 0; }
+	.registration details.guidelines summary { cursor: pointer; font-weight: 700; }
+	.registration details.guidelines .guidelines-body { margin-top: 0.75rem; }
+	.registration details.guidelines p { margin-block: 0.5rem; }
+	.registration details.guidelines ul { margin-block: 0.5rem; padding-left: 1.25rem; }
+	.registration details.guidelines li { margin-block: 0.3rem; }
+	.registration details.guidelines .important { color: var(--sl-color-red-high); }
+	.intro-actions { margin-top: 1.5rem; text-align: center; }
+	.intro-actions .help { margin-top: 0.75rem; }
 	.registration legend { padding-inline: 0.35rem; font-weight: 700; }
 	.registration legend small { margin-left: 0.5rem; color: var(--sl-color-gray-3); font-weight: 400; }
 	.choice-grid, .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }

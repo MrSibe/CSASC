@@ -71,7 +71,7 @@ export function validateRegistrationPayload(raw) {
     const organization = cleanText(rawMember?.organization);
     const prefix = `members.${index}`;
 
-    validateText(errors, `${prefix}.realName`, realName, "真实姓名", FIELD_LIMITS.name);
+    validateText(errors, `${prefix}.realName`, realName, "姓名", FIELD_LIMITS.name);
     validateText(errors, `${prefix}.email`, email, "邮箱", FIELD_LIMITS.email);
     validateText(errors, `${prefix}.qq`, qq, "QQ 号", FIELD_LIMITS.qq);
     validateText(errors, `${prefix}.organization`, organization, "学校或组织", FIELD_LIMITS.organization, false);
