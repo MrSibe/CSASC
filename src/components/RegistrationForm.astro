@@ -1,528 +1,964 @@
 ---
+
 ---
 
-<section class="registration" data-registration-form aria-labelledby="registration-title">
-	<header>
-		<h1 id="registration-title" data-campaign-title>填写报名信息</h1>
-		<dl class="campaign-times">
-			<div><dt>报名开放</dt><dd data-opens-at>待公布</dd></div>
-			<div><dt>报名截止</dt><dd data-closes-at>待公布</dd></div>
-			<div><dt>活动开始</dt><dd data-activity-starts-at>待公布</dd></div>
-			<div><dt>活动结束</dt><dd data-activity-ends-at>待公布</dd></div>
-		</dl>
-		<p>请由本人或队长一次填写完整。标有“必填”的项目必须填写。所有内容请使用英文填写（姓名填中文拼音）。</p>
-		<p class="status" data-status aria-live="polite">正在读取报名状态…</p>
-	</header>
+<section
+  class="registration"
+  data-registration-form
+  aria-labelledby="registration-title"
+>
+  <header>
+    <h1 id="registration-title" data-campaign-title>填写报名信息</h1>
+    <dl class="campaign-times">
+      <div><dt>报名时间</dt><dd data-registration-period>待公布</dd></div>
+      <div><dt>活动时间</dt><dd data-activity-period>待公布</dd></div>
+    </dl>
+    <p>
+      请由本人或队长一次填写完整。标有“必填”的项目必须填写。所有内容请使用英文填写（姓名填中文拼音）。
+    </p>
+    <p class="status" data-status aria-live="polite">正在读取报名状态…</p>
+  </header>
 
-	<div class="notice" data-config-error role="alert" hidden>
-		<span>暂时无法读取报名状态，请稍后重试。</span>
-		<button type="button" data-retry-config>重新读取</button>
-	</div>
+  <div class="notice" data-config-error role="alert" hidden>
+    <span>暂时无法读取报名状态，请稍后重试。</span>
+    <button type="button" data-retry-config>重新读取</button>
+  </div>
 
-	<div class="notice" data-closed hidden>
-		<strong data-closed-title></strong>
-		<p data-closed-detail></p>
-	</div>
+  <div class="notice" data-closed hidden>
+    <strong data-closed-title></strong>
+    <p data-closed-detail></p>
+  </div>
 
-	<div class="success" data-success role="status" hidden>
-		<h2>报名已接收</h2>
-		<p>你的报名编号：</p>
-		<output data-registration-number></output>
-		<p>请截图或抄录此编号。它仅用于联系管理员时核对报名，不能用于在线查询资料。</p>
-		<dl>
-			<div><dt>活动届次</dt><dd data-success-campaign></dd></div>
-			<div><dt>提交时间</dt><dd data-success-time></dd></div>
-		</dl>
-	</div>
+  <div class="success" data-success role="status" hidden>
+    <h2>报名已接收</h2>
+    <p>你的报名编号：</p>
+    <output data-registration-number></output>
+    <p>
+      请截图或抄录此编号。它仅用于联系管理员时核对报名，不能用于在线查询资料。
+    </p>
+    <dl>
+      <div><dt>活动届次</dt><dd data-success-campaign></dd></div>
+      <div><dt>提交时间</dt><dd data-success-time></dd></div>
+    </dl>
+  </div>
 
-	<div data-intro hidden>
-		<div class="guidelines">
-			<h2 class="guidelines-title">报名须知</h2>
-			<div class="guidelines-body">
-				<p>报名分为<strong>个人报名</strong>与<strong>团队报名</strong>两种形式：</p>
-				<ul>
-					<li><strong>个人报名</strong>：优先与其他个人报名的同好随机分配组队，由活动经验丰富的志愿者带领参与活动。</li>
-					<li><strong>团队报名</strong>：团队人数为 5–9 人（含队长），由团队内部决定队长和队名。</li>
-				</ul>
-				<p class="important"><strong>重要提示：</strong>一旦报名，不能退出！请务必仔细考虑是否参与活动。</p>
-				<p><strong>报名前请确认：</strong></p>
-				<ul>
-					<li>个人报名填写本人信息；团队报名由队长一次填写全部成员信息，团队总人数为 5–9 人。</li>
-					<li>报名需要提供每位成员的姓名（填中文拼音，名在前、姓在后）、邮箱和 QQ 号，学校或组织可以不填。所有内容请使用英文填写。</li>
-					<li>资料仅用于本期活动报名、组队、活动联络和必要的历史核对，由项目管理员访问并长期保存。</li>
-					<li>报名后不能自行在线查询、修改或取消。如资料有误或希望删除个人资料，请通过官方交流群联系管理员，并提供报名编号核对。</li>
-				</ul>
-			</div>
-		</div>
-		<div class="intro-actions">
-			<button class="primary" type="button" data-continue>我已阅读并知晓，进入报名表</button>
-			<p class="help">请完整阅读以上须知后再进入报名表。</p>
-		</div>
-	</div>
+  <div data-intro hidden>
+    <div class="guidelines">
+      <h2 class="guidelines-title">报名须知</h2>
+      <div class="guidelines-body">
+        <p>
+          报名分为<strong>个人报名</strong>与<strong>团队报名</strong>两种形式：
+        </p>
+        <ul>
+          <li>
+            <strong>个人报名</strong
+            >：优先与其他个人报名的同好随机分配组队，由活动经验丰富的志愿者带领参与活动。
+          </li>
+          <li>
+            <strong>团队报名</strong>：团队人数为 5–9
+            人（含队长），由团队内部决定队长和队名。
+          </li>
+        </ul>
+        <p class="important">
+          <strong>重要提示：</strong
+          >一旦报名，不能退出！请务必仔细考虑是否参与活动。
+        </p>
+        <p><strong>报名前请确认：</strong></p>
+        <ul>
+          <li>
+            个人报名填写本人信息；团队报名由队长一次填写全部成员信息，团队总人数为
+            5–9 人。
+          </li>
+          <li>
+            报名需要提供每位成员的姓名（填中文拼音，名在前、姓在后）、邮箱和 QQ
+            号，学校或组织可以不填。所有内容请使用英文填写。
+          </li>
+          <li>
+            资料仅用于本期活动报名、组队、活动联络和必要的历史核对，由项目管理员访问并长期保存。
+          </li>
+          <li>
+            报名后不能自行在线查询、修改或取消。如资料有误或希望删除个人资料，请通过官方交流群联系管理员，并提供报名编号核对。
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="intro-actions">
+      <button class="primary" type="button" data-continue
+        >我已阅读并知晓，进入报名表</button
+      >
+      <p class="help">请完整阅读以上须知后再进入报名表。</p>
+    </div>
+  </div>
 
-	<form data-form novalidate hidden>
-		<fieldset>
-			<legend>选择报名方式</legend>
-			<div class="choice-grid">
-				<label>
-					<input type="radio" name="registrationType" value="individual" checked />
-					<span><strong>个人报名</strong><small>由活动志愿者协助组队</small></span>
-				</label>
-				<label>
-					<input type="radio" name="registrationType" value="team" />
-					<span><strong>团队报名</strong><small>含队长共 5–9 人</small></span>
-				</label>
-			</div>
-		</fieldset>
+  <form data-form novalidate hidden>
+    <fieldset>
+      <legend>选择报名方式</legend>
+      <div class="choice-grid">
+        <label>
+          <input
+            type="radio"
+            name="registrationType"
+            value="individual"
+            checked
+          />
+          <span
+            ><strong>个人报名</strong><small>由活动志愿者协助组队</small></span
+          >
+        </label>
+        <label>
+          <input type="radio" name="registrationType" value="team" />
+          <span><strong>团队报名</strong><small>含队长共 5–9 人</small></span>
+        </label>
+      </div>
+    </fieldset>
 
-		<div class="field" data-team-name hidden>
-			<label for="team-name">队名 <small>必填</small></label>
-			<input id="team-name" type="text" maxlength="80" autocomplete="organization" placeholder="例如：Orion Survey Team" />
-			<p class="field-error" data-error="teamName"></p>
-		</div>
+    <div class="field" data-team-name hidden>
+      <label for="team-name">队名 <small>必填</small></label>
+      <input
+        id="team-name"
+        type="text"
+        maxlength="80"
+        autocomplete="organization"
+        placeholder="例如：Orion Survey Team"
+      />
+      <p class="field-error" data-error="teamName"></p>
+    </div>
 
-		<fieldset>
-			<legend><span data-members-legend>填写个人信息</span> <small data-member-count>1 名</small></legend>
-			<div class="members" data-members>
-				<article class="member" data-member-key="member-1">
-					<header><h3>报名者</h3></header>
-					<div class="field-grid">
-						<div class="field">
-							<label for="member-1-realName">姓名 <small>必填，填中文拼音，名在前，姓在后</small></label>
-							<input id="member-1-realName" data-field="realName" type="text" maxlength="50" autocomplete="name" placeholder="例如：Feiyang Ren" />
-							<p class="field-error" data-error-field="realName"></p>
-						</div>
-						<div class="field">
-							<label for="member-1-email">邮箱 <small>必填</small></label>
-							<input id="member-1-email" data-field="email" type="email" maxlength="254" autocomplete="email" inputmode="email" placeholder="例如：xxxxxxx@qq.com" />
-							<p class="field-error" data-error-field="email"></p>
-						</div>
-						<div class="field">
-							<label for="member-1-qq">QQ 号 <small>必填</small></label>
-							<input id="member-1-qq" data-field="qq" type="text" maxlength="12" inputmode="numeric" pattern="[1-9][0-9]{4,11}" />
-							<p class="field-error" data-error-field="qq"></p>
-						</div>
-						<div class="field">
-							<label for="member-1-organization">学校或组织 <small>选填</small></label>
-							<input id="member-1-organization" data-field="organization" type="text" maxlength="120" autocomplete="organization" placeholder="例如：Peking University" />
-							<p class="field-error" data-error-field="organization"></p>
-						</div>
-					</div>
-				</article>
-			</div>
-			<button class="secondary" type="button" data-add-member hidden>新增队员</button>
-			<p class="field-error" data-error="members"></p>
-		</fieldset>
+    <fieldset>
+      <legend
+        ><span data-members-legend>填写个人信息</span>
+        <small data-member-count>1 名</small></legend
+      >
+      <div class="members" data-members>
+        <article class="member" data-member-key="member-1">
+          <header><h3>报名者</h3></header>
+          <div class="field-grid">
+            <div class="field">
+              <label for="member-1-realName"
+                >姓名 <small>必填，填中文拼音，名在前，姓在后</small></label
+              >
+              <input
+                id="member-1-realName"
+                data-field="realName"
+                type="text"
+                maxlength="50"
+                autocomplete="name"
+                placeholder="例如：Feiyang Ren"
+              />
+              <p class="field-error" data-error-field="realName"></p>
+            </div>
+            <div class="field">
+              <label for="member-1-email">邮箱 <small>必填</small></label>
+              <input
+                id="member-1-email"
+                data-field="email"
+                type="email"
+                maxlength="254"
+                autocomplete="email"
+                inputmode="email"
+                placeholder="例如：xxxxxxx@qq.com"
+              />
+              <p class="field-error" data-error-field="email"></p>
+            </div>
+            <div class="field">
+              <label for="member-1-qq">QQ 号 <small>必填</small></label>
+              <input
+                id="member-1-qq"
+                data-field="qq"
+                type="text"
+                maxlength="12"
+                inputmode="numeric"
+                pattern="[1-9][0-9]{4,11}"
+              />
+              <p class="field-error" data-error-field="qq"></p>
+            </div>
+            <div class="field">
+              <label for="member-1-organization"
+                >学校或组织 <small>选填</small></label
+              >
+              <input
+                id="member-1-organization"
+                data-field="organization"
+                type="text"
+                maxlength="120"
+                autocomplete="organization"
+                placeholder="例如：Peking University"
+              />
+              <p class="field-error" data-error-field="organization"></p>
+            </div>
+          </div>
+        </article>
+      </div>
+      <button class="secondary" type="button" data-add-member hidden
+        >新增队员</button
+      >
+      <p class="field-error" data-error="members"></p>
+    </fieldset>
 
-		<fieldset>
-			<legend>确认与提交</legend>
-			<label class="check" data-team-authorization hidden>
-				<input type="checkbox" name="teamAuthorization" />
-				<span>我确认已获得全部队员授权，可以代为提交以上资料。</span>
-			</label>
-			<p class="field-error" data-error="teamAuthorization"></p>
+    <fieldset>
+      <legend>确认与提交</legend>
+      <label class="check" data-team-authorization hidden>
+        <input type="checkbox" name="teamAuthorization" />
+        <span>我确认已获得全部队员授权，可以代为提交以上资料。</span>
+      </label>
+      <p class="field-error" data-error="teamAuthorization"></p>
 
-			<label class="check">
-				<input type="checkbox" name="privacyAccepted" />
-				<span>我已阅读本页隐私告知，并同意将资料用于本期活动报名、组队和联络。</span>
-			</label>
-			<p class="field-error" data-error="privacyAccepted"></p>
+      <label class="check">
+        <input type="checkbox" name="privacyAccepted" />
+        <span
+          >我已阅读本页隐私告知，并同意将资料用于本期活动报名、组队和联络。</span
+        >
+      </label>
+      <p class="field-error" data-error="privacyAccepted"></p>
 
-			<label class="check">
-				<input type="checkbox" name="accuracyConfirmed" />
-				<span>我确认填写的信息真实准确，并理解提交后需联系管理员才能修改。</span>
-			</label>
-			<p class="field-error" data-error="accuracyConfirmed"></p>
+      <label class="check">
+        <input type="checkbox" name="accuracyConfirmed" />
+        <span>我确认填写的信息真实准确，并理解提交后需联系管理员才能修改。</span
+        >
+      </label>
+      <p class="field-error" data-error="accuracyConfirmed"></p>
 
-			<div class="turnstile" data-turnstile></div>
-			<p class="field-error" data-error="turnstileToken"></p>
-			<div class="notice error" data-submit-error role="alert" hidden></div>
+      <div class="turnstile" data-turnstile></div>
+      <p class="field-error" data-error="turnstileToken"></p>
+      <div class="notice error" data-submit-error role="alert" hidden></div>
 
-			<button class="primary" type="submit" data-submit>确认并提交报名</button>
-			<p class="help">请勿重复点击。网络中断后可以直接重试，系统不会生成重复报名。</p>
-		</fieldset>
-	</form>
+      <button class="primary" type="submit" data-submit>确认并提交报名</button>
+      <p class="help">
+        请勿重复点击。网络中断后可以直接重试，系统不会生成重复报名。
+      </p>
+    </fieldset>
+  </form>
 
-	<template data-member-template>
-		<article class="member" data-member-key="">
-			<header>
-				<h3></h3>
-				<button class="secondary remove" type="button" data-remove-member>移除</button>
-			</header>
-			<div class="field-grid">
-				<div class="field"><label>姓名 <small>必填，填中文拼音，名在前，姓在后</small></label><input data-field="realName" type="text" maxlength="50" autocomplete="name" placeholder="例如：Feiyang Ren" /><p class="field-error" data-error-field="realName"></p></div>
-				<div class="field"><label>邮箱 <small>必填</small></label><input data-field="email" type="email" maxlength="254" autocomplete="email" inputmode="email" placeholder="例如：xxxxxxx@qq.com" /><p class="field-error" data-error-field="email"></p></div>
-				<div class="field"><label>QQ 号 <small>必填</small></label><input data-field="qq" type="text" maxlength="12" inputmode="numeric" pattern="[1-9][0-9]{4,11}" /><p class="field-error" data-error-field="qq"></p></div>
-				<div class="field"><label>学校或组织 <small>选填</small></label><input data-field="organization" type="text" maxlength="120" autocomplete="organization" placeholder="例如：Peking University" /><p class="field-error" data-error-field="organization"></p></div>
-			</div>
-		</article>
-	</template>
+  <template data-member-template>
+    <article class="member" data-member-key="">
+      <header>
+        <h3></h3>
+        <button class="secondary remove" type="button" data-remove-member
+          >移除</button
+        >
+      </header>
+      <div class="field-grid">
+        <div class="field">
+          <label>姓名 <small>必填，填中文拼音，名在前，姓在后</small></label
+          ><input
+            data-field="realName"
+            type="text"
+            maxlength="50"
+            autocomplete="name"
+            placeholder="例如：Feiyang Ren"
+          /><p class="field-error" data-error-field="realName"></p>
+        </div>
+        <div class="field">
+          <label>邮箱 <small>必填</small></label><input
+            data-field="email"
+            type="email"
+            maxlength="254"
+            autocomplete="email"
+            inputmode="email"
+            placeholder="例如：xxxxxxx@qq.com"
+          /><p class="field-error" data-error-field="email"></p>
+        </div>
+        <div class="field">
+          <label>QQ 号 <small>必填</small></label><input
+            data-field="qq"
+            type="text"
+            maxlength="12"
+            inputmode="numeric"
+            pattern="[1-9][0-9]{4,11}"
+          /><p class="field-error" data-error-field="qq"></p>
+        </div>
+        <div class="field">
+          <label>学校或组织 <small>选填</small></label><input
+            data-field="organization"
+            type="text"
+            maxlength="120"
+            autocomplete="organization"
+            placeholder="例如：Peking University"
+          /><p class="field-error" data-error-field="organization"></p>
+        </div>
+      </div>
+    </article>
+  </template>
 </section>
 
 <script>
-	import {
-		TEAM_MAX_MEMBERS,
-		TEAM_MIN_MEMBERS,
-		validateRegistrationPayload,
-	} from '../../shared/registration.mjs';
+  import {
+    TEAM_MAX_MEMBERS,
+    TEAM_MIN_MEMBERS,
+    validateRegistrationPayload,
+  } from "../../shared/registration.mjs";
 
-	type RegistrationConfig = {
-		campaignTitle: string;
-		opensAt: string;
-		closesAt: string;
-		activityStartsAt: string;
-		activityEndsAt: string;
-		isOpen: boolean;
-		status: 'open' | 'not_started' | 'closed' | 'configuration_error';
-		turnstileSiteKey: string;
-	};
-	type FieldError = { path: string; message: string };
-	type TurnstileApi = {
-		render: (element: HTMLElement, options: Record<string, unknown>) => string;
-		reset: (widgetId: string) => void;
-	};
+  type RegistrationConfig = {
+    campaignTitle: string;
+    opensAt: string;
+    closesAt: string;
+    activityStartsAt: string;
+    activityEndsAt: string;
+    isOpen: boolean;
+    status: "open" | "not_started" | "closed" | "configuration_error";
+    turnstileSiteKey: string;
+  };
+  type FieldError = { path: string; message: string };
+  type TurnstileApi = {
+    render: (element: HTMLElement, options: Record<string, unknown>) => string;
+    reset: (widgetId: string) => void;
+  };
 
-	const foundRoot = document.querySelector<HTMLElement>('[data-registration-form]');
-	if (foundRoot) {
-		const root = foundRoot;
-		const form = root.querySelector<HTMLFormElement>('[data-form]')!;
-		const members = root.querySelector<HTMLElement>('[data-members]')!;
-		const template = root.querySelector<HTMLTemplateElement>('[data-member-template]')!;
-		const addButton = root.querySelector<HTMLButtonElement>('[data-add-member]')!;
-		const teamNameWrap = root.querySelector<HTMLElement>('[data-team-name]')!;
-		const teamAuthorization = root.querySelector<HTMLElement>('[data-team-authorization]')!;
-		const status = root.querySelector<HTMLElement>('[data-status]')!;
-		const submitButton = root.querySelector<HTMLButtonElement>('[data-submit]')!;
-		const submitError = root.querySelector<HTMLElement>('[data-submit-error]')!;
-		const intro = root.querySelector<HTMLElement>('[data-intro]')!;
-		const continueButton = root.querySelector<HTMLButtonElement>('[data-continue]')!;
-		let config: RegistrationConfig | null = null;
-		let idempotencyKey = '';
-		let memberSequence = 1;
-		let turnstileToken = '';
-		let turnstileWidgetId = '';
+  const foundRoot = document.querySelector<HTMLElement>(
+    "[data-registration-form]",
+  );
+  if (foundRoot) {
+    const root = foundRoot;
+    const form = root.querySelector<HTMLFormElement>("[data-form]")!;
+    const members = root.querySelector<HTMLElement>("[data-members]")!;
+    const template = root.querySelector<HTMLTemplateElement>(
+      "[data-member-template]",
+    )!;
+    const addButton =
+      root.querySelector<HTMLButtonElement>("[data-add-member]")!;
+    const teamNameWrap = root.querySelector<HTMLElement>("[data-team-name]")!;
+    const teamAuthorization = root.querySelector<HTMLElement>(
+      "[data-team-authorization]",
+    )!;
+    const status = root.querySelector<HTMLElement>("[data-status]")!;
+    const submitButton =
+      root.querySelector<HTMLButtonElement>("[data-submit]")!;
+    const submitError = root.querySelector<HTMLElement>("[data-submit-error]")!;
+    const intro = root.querySelector<HTMLElement>("[data-intro]")!;
+    const continueButton =
+      root.querySelector<HTMLButtonElement>("[data-continue]")!;
+    let config: RegistrationConfig | null = null;
+    let idempotencyKey = "";
+    let memberSequence = 1;
+    let turnstileToken = "";
+    let turnstileWidgetId = "";
 
-		const turnstile = () => (window as typeof window & { turnstile?: TurnstileApi }).turnstile;
-		const memberCards = () => Array.from(members.querySelectorAll<HTMLElement>('[data-member-key]'));
-		const registrationType = () =>
-			form.querySelector<HTMLInputElement>('input[name="registrationType"]:checked')?.value === 'team'
-				? 'team'
-				: 'individual';
-		const visibleCards = () =>
-			registrationType() === 'team' ? memberCards() : memberCards().slice(0, 1);
+    const turnstile = () =>
+      (window as typeof window & { turnstile?: TurnstileApi }).turnstile;
+    const memberCards = () =>
+      Array.from(members.querySelectorAll<HTMLElement>("[data-member-key]"));
+    const registrationType = () =>
+      form.querySelector<HTMLInputElement>(
+        'input[name="registrationType"]:checked',
+      )?.value === "team"
+        ? "team"
+        : "individual";
+    const visibleCards = () =>
+      registrationType() === "team" ? memberCards() : memberCards().slice(0, 1);
 
-		function formatBeijingTime(value: string) {
-			if (!value) return '待公布';
-			return new Intl.DateTimeFormat('zh-CN', {
-				timeZone: 'Asia/Shanghai', year: 'numeric', month: 'long', day: 'numeric',
-				hour: '2-digit', minute: '2-digit', hour12: false,
-			}).format(new Date(value));
-		}
+    function formatBeijingTime(value: string) {
+      if (!value) return "待公布";
+      return new Intl.DateTimeFormat("zh-CN", {
+        timeZone: "Asia/Shanghai",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }).format(new Date(value));
+    }
 
-		function statusText(value: RegistrationConfig['status']) {
-			if (value === 'not_started') return '报名尚未开始';
-			if (value === 'closed') return '本期报名已经截止';
-			if (value === 'configuration_error') return '报名服务正在配置';
-			return '报名开放中';
-		}
+    function statusText(value: RegistrationConfig["status"]) {
+      if (value === "not_started") return "报名尚未开始";
+      if (value === "closed") return "本期报名已经截止";
+      if (value === "configuration_error") return "报名服务正在配置";
+      return "报名开放中";
+    }
 
-		function createMember() {
-			memberSequence += 1;
-			const fragment = template.content.cloneNode(true) as DocumentFragment;
-			const card = fragment.querySelector<HTMLElement>('[data-member-key]')!;
-			const key = `member-${memberSequence}`;
-			card.dataset.memberKey = key;
-			card.querySelectorAll<HTMLInputElement>('[data-field]').forEach((input) => {
-				const field = input.dataset.field!;
-				input.id = `${key}-${field}`;
-				input.closest('.field')?.querySelector('label')?.setAttribute('for', input.id);
-			});
-			card.querySelector('[data-remove-member]')?.addEventListener('click', () => {
-				if (memberCards().length <= TEAM_MIN_MEMBERS) return;
-				card.remove();
-				updateMembers();
-			});
-			members.append(fragment);
-			return card;
-		}
+    function createMember() {
+      memberSequence += 1;
+      const fragment = template.content.cloneNode(true) as DocumentFragment;
+      const card = fragment.querySelector<HTMLElement>("[data-member-key]")!;
+      const key = `member-${memberSequence}`;
+      card.dataset.memberKey = key;
+      card
+        .querySelectorAll<HTMLInputElement>("[data-field]")
+        .forEach((input) => {
+          const field = input.dataset.field!;
+          input.id = `${key}-${field}`;
+          input
+            .closest(".field")
+            ?.querySelector("label")
+            ?.setAttribute("for", input.id);
+        });
+      card
+        .querySelector("[data-remove-member]")
+        ?.addEventListener("click", () => {
+          if (memberCards().length <= TEAM_MIN_MEMBERS) return;
+          card.remove();
+          updateMembers();
+        });
+      members.append(fragment);
+      return card;
+    }
 
-		function updateMembers() {
-			const team = registrationType() === 'team';
-			const cards = memberCards();
-			cards.forEach((card, index) => {
-				card.hidden = !team && index > 0;
-				card.querySelector('h3')!.textContent = team ? (index === 0 ? '队长' : `队员 ${index}`) : '报名者';
-				const remove = card.querySelector<HTMLButtonElement>('[data-remove-member]');
-				if (remove) remove.disabled = cards.length <= TEAM_MIN_MEMBERS;
-			});
-			teamNameWrap.hidden = !team;
-			teamAuthorization.hidden = !team;
-			addButton.hidden = !team;
-			addButton.disabled = cards.length >= TEAM_MAX_MEMBERS;
-			addButton.textContent = cards.length >= TEAM_MAX_MEMBERS ? '已达到 9 人上限' : '新增队员';
-			root.querySelector('[data-members-legend]')!.textContent = team ? '填写团队成员' : '填写个人信息';
-			root.querySelector('[data-member-count]')!.textContent = team ? `${cards.length} / ${TEAM_MAX_MEMBERS} 人` : '1 名';
-		}
+    function updateMembers() {
+      const team = registrationType() === "team";
+      const cards = memberCards();
+      cards.forEach((card, index) => {
+        card.hidden = !team && index > 0;
+        card.querySelector("h3")!.textContent = team
+          ? index === 0
+            ? "队长"
+            : `队员 ${index}`
+          : "报名者";
+        const remove = card.querySelector<HTMLButtonElement>(
+          "[data-remove-member]",
+        );
+        if (remove) remove.disabled = cards.length <= TEAM_MIN_MEMBERS;
+      });
+      teamNameWrap.hidden = !team;
+      teamAuthorization.hidden = !team;
+      addButton.hidden = !team;
+      addButton.disabled = cards.length >= TEAM_MAX_MEMBERS;
+      addButton.textContent =
+        cards.length >= TEAM_MAX_MEMBERS ? "已达到 9 人上限" : "新增队员";
+      root.querySelector("[data-members-legend]")!.textContent = team
+        ? "填写团队成员"
+        : "填写个人信息";
+      root.querySelector("[data-member-count]")!.textContent = team
+        ? `${cards.length} / ${TEAM_MAX_MEMBERS} 人`
+        : "1 名";
+    }
 
-		function selectType() {
-			if (registrationType() === 'team') {
-				while (memberCards().length < TEAM_MIN_MEMBERS) createMember();
-			}
-			clearErrors();
-			updateMembers();
-		}
+    function selectType() {
+      if (registrationType() === "team") {
+        while (memberCards().length < TEAM_MIN_MEMBERS) createMember();
+      }
+      clearErrors();
+      updateMembers();
+    }
 
-		function clearErrors() {
-			root.querySelectorAll<HTMLElement>('.field-error').forEach((element) => { element.textContent = ''; });
-			root.querySelectorAll<HTMLElement>('[aria-invalid="true"]').forEach((element) => element.removeAttribute('aria-invalid'));
-			submitError.hidden = true;
-			submitError.textContent = '';
-		}
+    function clearErrors() {
+      root.querySelectorAll<HTMLElement>(".field-error").forEach((element) => {
+        element.textContent = "";
+      });
+      root
+        .querySelectorAll<HTMLElement>('[aria-invalid="true"]')
+        .forEach((element) => element.removeAttribute("aria-invalid"));
+      submitError.hidden = true;
+      submitError.textContent = "";
+    }
 
-		function showErrors(errors: FieldError[]) {
-			clearErrors();
-			let firstInput: HTMLElement | null = null;
-			for (const error of errors) {
-				const memberMatch = /^members\.(\d+)\.(.+)$/.exec(error.path);
-				if (memberMatch) {
-					const card = visibleCards()[Number(memberMatch[1])];
-					const field = memberMatch[2];
-					const input = card?.querySelector<HTMLElement>(`[data-field="${field}"]`);
-					const message = card?.querySelector<HTMLElement>(`[data-error-field="${field}"]`);
-					if (input) input.setAttribute('aria-invalid', 'true');
-					if (message) message.textContent = error.message;
-					firstInput ??= input ?? null;
-					continue;
-				}
-				const message = root.querySelector<HTMLElement>(`[data-error="${error.path}"]`);
-				if (message) message.textContent = error.message;
-				const input = error.path === 'teamName'
-					? root.querySelector<HTMLElement>('#team-name')
-					: form.querySelector<HTMLElement>(`[name="${error.path}"]`);
-				if (input) input.setAttribute('aria-invalid', 'true');
-				firstInput ??= input;
-			}
-			firstInput?.focus();
-		}
+    function showErrors(errors: FieldError[]) {
+      clearErrors();
+      let firstInput: HTMLElement | null = null;
+      for (const error of errors) {
+        const memberMatch = /^members\.(\d+)\.(.+)$/.exec(error.path);
+        if (memberMatch) {
+          const card = visibleCards()[Number(memberMatch[1])];
+          const field = memberMatch[2];
+          const input = card?.querySelector<HTMLElement>(
+            `[data-field="${field}"]`,
+          );
+          const message = card?.querySelector<HTMLElement>(
+            `[data-error-field="${field}"]`,
+          );
+          if (input) input.setAttribute("aria-invalid", "true");
+          if (message) message.textContent = error.message;
+          firstInput ??= input ?? null;
+          continue;
+        }
+        const message = root.querySelector<HTMLElement>(
+          `[data-error="${error.path}"]`,
+        );
+        if (message) message.textContent = error.message;
+        const input =
+          error.path === "teamName"
+            ? root.querySelector<HTMLElement>("#team-name")
+            : form.querySelector<HTMLElement>(`[name="${error.path}"]`);
+        if (input) input.setAttribute("aria-invalid", "true");
+        firstInput ??= input;
+      }
+      firstInput?.focus();
+    }
 
-		function collectPayload() {
-			return {
-				registrationType: registrationType(),
-				teamName: root.querySelector<HTMLInputElement>('#team-name')!.value,
-				members: visibleCards().map((card) => ({
-					realName: card.querySelector<HTMLInputElement>('[data-field="realName"]')!.value,
-					email: card.querySelector<HTMLInputElement>('[data-field="email"]')!.value,
-					qq: card.querySelector<HTMLInputElement>('[data-field="qq"]')!.value,
-					organization: card.querySelector<HTMLInputElement>('[data-field="organization"]')!.value,
-				})),
-				privacyAccepted: form.querySelector<HTMLInputElement>('[name="privacyAccepted"]')!.checked,
-				accuracyConfirmed: form.querySelector<HTMLInputElement>('[name="accuracyConfirmed"]')!.checked,
-				teamAuthorization: form.querySelector<HTMLInputElement>('[name="teamAuthorization"]')!.checked,
-				turnstileToken,
-			};
-		}
+    function collectPayload() {
+      return {
+        registrationType: registrationType(),
+        teamName: root.querySelector<HTMLInputElement>("#team-name")!.value,
+        members: visibleCards().map((card) => ({
+          realName: card.querySelector<HTMLInputElement>(
+            '[data-field="realName"]',
+          )!.value,
+          email: card.querySelector<HTMLInputElement>('[data-field="email"]')!
+            .value,
+          qq: card.querySelector<HTMLInputElement>('[data-field="qq"]')!.value,
+          organization: card.querySelector<HTMLInputElement>(
+            '[data-field="organization"]',
+          )!.value,
+        })),
+        privacyAccepted: form.querySelector<HTMLInputElement>(
+          '[name="privacyAccepted"]',
+        )!.checked,
+        accuracyConfirmed: form.querySelector<HTMLInputElement>(
+          '[name="accuracyConfirmed"]',
+        )!.checked,
+        teamAuthorization: form.querySelector<HTMLInputElement>(
+          '[name="teamAuthorization"]',
+        )!.checked,
+        turnstileToken,
+      };
+    }
 
-		async function loadTurnstileScript() {
-			if (turnstile()) return;
-			await new Promise<void>((resolve, reject) => {
-				const existing = document.querySelector<HTMLScriptElement>('#csasc-turnstile-script');
-				if (existing) {
-					existing.addEventListener('load', () => resolve(), { once: true });
-					existing.addEventListener('error', reject, { once: true });
-					return;
-				}
-				const script = document.createElement('script');
-				script.id = 'csasc-turnstile-script';
-				script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
-				script.async = true;
-				script.defer = true;
-				script.addEventListener('load', () => resolve(), { once: true });
-				script.addEventListener('error', reject, { once: true });
-				document.head.append(script);
-			});
-		}
+    async function loadTurnstileScript() {
+      if (turnstile()) return;
+      await new Promise<void>((resolve, reject) => {
+        const existing = document.querySelector<HTMLScriptElement>(
+          "#csasc-turnstile-script",
+        );
+        if (existing) {
+          existing.addEventListener("load", () => resolve(), { once: true });
+          existing.addEventListener("error", reject, { once: true });
+          return;
+        }
+        const script = document.createElement("script");
+        script.id = "csasc-turnstile-script";
+        script.src =
+          "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+        script.async = true;
+        script.defer = true;
+        script.addEventListener("load", () => resolve(), { once: true });
+        script.addEventListener("error", reject, { once: true });
+        document.head.append(script);
+      });
+    }
 
-		async function renderTurnstile() {
-			if (!config?.turnstileSiteKey || turnstileWidgetId) return;
-			try {
-				await loadTurnstileScript();
-				const container = root.querySelector<HTMLElement>('[data-turnstile]')!;
-				turnstileWidgetId = turnstile()?.render(container, {
-					sitekey: config.turnstileSiteKey,
-					theme: 'auto',
-					language: 'zh-cn',
-					callback: (token: string) => { turnstileToken = token; root.querySelector<HTMLElement>('[data-error="turnstileToken"]')!.textContent = ''; },
-					'expired-callback': () => { turnstileToken = ''; },
-					'error-callback': () => { turnstileToken = ''; showSubmitError('人机验证加载失败，请检查网络后重试。'); },
-				}) ?? '';
-			} catch {
-				showSubmitError('人机验证暂时无法加载，请刷新页面后重试。');
-			}
-		}
+    async function renderTurnstile() {
+      if (!config?.turnstileSiteKey || turnstileWidgetId) return;
+      try {
+        await loadTurnstileScript();
+        const container = root.querySelector<HTMLElement>("[data-turnstile]")!;
+        turnstileWidgetId =
+          turnstile()?.render(container, {
+            sitekey: config.turnstileSiteKey,
+            theme: "auto",
+            language: "zh-cn",
+            callback: (token: string) => {
+              turnstileToken = token;
+              root.querySelector<HTMLElement>(
+                '[data-error="turnstileToken"]',
+              )!.textContent = "";
+            },
+            "expired-callback": () => {
+              turnstileToken = "";
+            },
+            "error-callback": () => {
+              turnstileToken = "";
+              showSubmitError("人机验证加载失败，请检查网络后重试。");
+            },
+          }) ?? "";
+      } catch {
+        showSubmitError("人机验证暂时无法加载，请刷新页面后重试。");
+      }
+    }
 
-		function showSubmitError(message: string) {
-			submitError.textContent = message;
-			submitError.hidden = false;
-		}
+    function showSubmitError(message: string) {
+      submitError.textContent = message;
+      submitError.hidden = false;
+    }
 
-		function resetTurnstile() {
-			turnstileToken = '';
-			if (turnstileWidgetId) turnstile()?.reset(turnstileWidgetId);
-		}
+    function resetTurnstile() {
+      turnstileToken = "";
+      if (turnstileWidgetId) turnstile()?.reset(turnstileWidgetId);
+    }
 
-		async function loadConfig() {
-			root.querySelector<HTMLElement>('[data-config-error]')!.hidden = true;
-			status.textContent = '正在读取报名状态…';
-			try {
-				const response = await fetch('/api/registration-config', { headers: { Accept: 'application/json' } });
-				if (!response.ok) throw new Error('config request failed');
-				config = await response.json() as RegistrationConfig;
-				status.textContent = statusText(config.status);
-				status.dataset.open = String(config.isOpen);
-				const campaignTitle = root.querySelector<HTMLElement>('[data-campaign-title]');
-				if (campaignTitle) campaignTitle.textContent = config.campaignTitle;
-				document.title = config.campaignTitle;
-				root.querySelector<HTMLElement>('[data-opens-at]')!.textContent = formatBeijingTime(config.opensAt);
-				root.querySelector<HTMLElement>('[data-closes-at]')!.textContent = formatBeijingTime(config.closesAt);
-				root.querySelector<HTMLElement>('[data-activity-starts-at]')!.textContent = formatBeijingTime(config.activityStartsAt);
-				root.querySelector<HTMLElement>('[data-activity-ends-at]')!.textContent = formatBeijingTime(config.activityEndsAt);
-				if (config.isOpen) {
-					intro.hidden = false;
-					root.querySelector<HTMLElement>('[data-closed]')!.hidden = true;
-				} else {
-					intro.hidden = true;
-					form.hidden = true;
-					const closed = root.querySelector<HTMLElement>('[data-closed]')!;
-					closed.hidden = false;
-					closed.querySelector<HTMLElement>('[data-closed-title]')!.textContent = statusText(config.status);
-					closed.querySelector<HTMLElement>('[data-closed-detail]')!.textContent = config.status === 'not_started'
-						? `开放时间：${formatBeijingTime(config.opensAt)}`
-						: config.status === 'closed' ? `截止时间：${formatBeijingTime(config.closesAt)}` : '管理员完成活动配置后即可接受报名。';
-				}
-			} catch {
-				status.textContent = '状态读取失败';
-				form.hidden = true;
-				root.querySelector<HTMLElement>('[data-config-error]')!.hidden = false;
-			}
-		}
+    async function loadConfig() {
+      root.querySelector<HTMLElement>("[data-config-error]")!.hidden = true;
+      status.textContent = "正在读取报名状态…";
+      try {
+        const response = await fetch("/api/registration-config", {
+          headers: { Accept: "application/json" },
+        });
+        if (!response.ok) throw new Error("config request failed");
+        config = (await response.json()) as RegistrationConfig;
+        status.textContent = statusText(config.status);
+        status.dataset.open = String(config.isOpen);
+        const campaignTitle = root.querySelector<HTMLElement>(
+          "[data-campaign-title]",
+        );
+        if (campaignTitle) campaignTitle.textContent = config.campaignTitle;
+        document.title = config.campaignTitle;
+        const registrationPeriod =
+          config.opensAt && config.closesAt
+            ? `${formatBeijingTime(config.opensAt)} - ${formatBeijingTime(config.closesAt)}`
+            : "待公布";
+        root.querySelector<HTMLElement>(
+          "[data-registration-period]",
+        )!.textContent = registrationPeriod;
+        const activityPeriod =
+          config.activityStartsAt && config.activityEndsAt
+            ? `${formatBeijingTime(config.activityStartsAt)} - ${formatBeijingTime(config.activityEndsAt)}`
+            : "待公布";
+        root.querySelector<HTMLElement>("[data-activity-period]")!.textContent =
+          activityPeriod;
+        if (config.isOpen) {
+          intro.hidden = false;
+          root.querySelector<HTMLElement>("[data-closed]")!.hidden = true;
+        } else {
+          intro.hidden = true;
+          form.hidden = true;
+          const closed = root.querySelector<HTMLElement>("[data-closed]")!;
+          closed.hidden = false;
+          closed.querySelector<HTMLElement>(
+            "[data-closed-title]",
+          )!.textContent = statusText(config.status);
+          closed.querySelector<HTMLElement>(
+            "[data-closed-detail]",
+          )!.textContent =
+            config.status === "not_started"
+              ? `开放时间：${formatBeijingTime(config.opensAt)}`
+              : config.status === "closed"
+                ? `截止时间：${formatBeijingTime(config.closesAt)}`
+                : "管理员完成活动配置后即可接受报名。";
+        }
+      } catch {
+        status.textContent = "状态读取失败";
+        form.hidden = true;
+        root.querySelector<HTMLElement>("[data-config-error]")!.hidden = false;
+      }
+    }
 
-		form.addEventListener('change', (event) => {
-			if ((event.target as HTMLInputElement).name === 'registrationType') selectType();
-		});
-		addButton.addEventListener('click', () => {
-			if (memberCards().length >= TEAM_MAX_MEMBERS) return;
-			const card = createMember();
-			updateMembers();
-			card.querySelector<HTMLInputElement>('[data-field="realName"]')?.focus();
-		});
-		root.querySelector('[data-retry-config]')?.addEventListener('click', loadConfig);
-		continueButton.addEventListener('click', () => {
-			intro.hidden = true;
-			form.hidden = false;
-			form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-			void renderTurnstile();
-		});
+    form.addEventListener("change", (event) => {
+      if ((event.target as HTMLInputElement).name === "registrationType")
+        selectType();
+    });
+    addButton.addEventListener("click", () => {
+      if (memberCards().length >= TEAM_MAX_MEMBERS) return;
+      const card = createMember();
+      updateMembers();
+      card.querySelector<HTMLInputElement>('[data-field="realName"]')?.focus();
+    });
+    root
+      .querySelector("[data-retry-config]")
+      ?.addEventListener("click", loadConfig);
+    continueButton.addEventListener("click", () => {
+      intro.hidden = true;
+      form.hidden = false;
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+      void renderTurnstile();
+    });
 
-		form.addEventListener('submit', async (event) => {
-			event.preventDefault();
-			clearErrors();
-			const payload = collectPayload();
-			const validation = validateRegistrationPayload(payload);
-			if (!validation.ok) { showErrors(validation.errors); return; }
-			if (!turnstileToken) { showErrors([{ path: 'turnstileToken', message: '请先完成人机验证' }]); return; }
-			submitButton.disabled = true;
-			submitButton.textContent = '正在提交…';
-			try {
-				const response = await fetch('/api/registrations', {
-					method: 'POST',
-					headers: { 'Content-Type': 'application/json', Accept: 'application/json', 'Idempotency-Key': idempotencyKey },
-					body: JSON.stringify(payload),
-				});
-				const result = await response.json() as { error?: string; fields?: FieldError[]; registrationNumber?: string; submittedAt?: string };
-				if (!response.ok) {
-					if (result.fields?.length) showErrors(result.fields);
-					showSubmitError(result.error || '提交失败，请稍后重试。');
-					resetTurnstile();
-					return;
-				}
-				form.hidden = true;
-				root.querySelector<HTMLElement>('[data-success]')!.hidden = false;
-				root.querySelector<HTMLElement>('[data-registration-number]')!.textContent = result.registrationNumber || '';
-				root.querySelector<HTMLElement>('[data-success-campaign]')!.textContent = config?.campaignTitle || '';
-				root.querySelector<HTMLElement>('[data-success-time]')!.textContent = formatBeijingTime(result.submittedAt || new Date().toISOString());
-				root.scrollIntoView({ behavior: 'smooth', block: 'start' });
-			} catch {
-				showSubmitError('网络连接中断。请保持本页内容，稍后再次提交；系统不会重复创建报名。');
-				resetTurnstile();
-			} finally {
-				submitButton.disabled = false;
-				submitButton.textContent = '确认并提交报名';
-			}
-		});
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      clearErrors();
+      const payload = collectPayload();
+      const validation = validateRegistrationPayload(payload);
+      if (!validation.ok) {
+        showErrors(validation.errors);
+        return;
+      }
+      if (!turnstileToken) {
+        showErrors([{ path: "turnstileToken", message: "请先完成人机验证" }]);
+        return;
+      }
+      submitButton.disabled = true;
+      submitButton.textContent = "正在提交…";
+      try {
+        const response = await fetch("/api/registrations", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            "Idempotency-Key": idempotencyKey,
+          },
+          body: JSON.stringify(payload),
+        });
+        const result = (await response.json()) as {
+          error?: string;
+          fields?: FieldError[];
+          registrationNumber?: string;
+          submittedAt?: string;
+        };
+        if (!response.ok) {
+          if (result.fields?.length) showErrors(result.fields);
+          showSubmitError(result.error || "提交失败，请稍后重试。");
+          resetTurnstile();
+          return;
+        }
+        form.hidden = true;
+        root.querySelector<HTMLElement>("[data-success]")!.hidden = false;
+        root.querySelector<HTMLElement>(
+          "[data-registration-number]",
+        )!.textContent = result.registrationNumber || "";
+        root.querySelector<HTMLElement>(
+          "[data-success-campaign]",
+        )!.textContent = config?.campaignTitle || "";
+        root.querySelector<HTMLElement>("[data-success-time]")!.textContent =
+          formatBeijingTime(result.submittedAt || new Date().toISOString());
+        root.scrollIntoView({ behavior: "smooth", block: "start" });
+      } catch {
+        showSubmitError(
+          "网络连接中断。请保持本页内容，稍后再次提交；系统不会重复创建报名。",
+        );
+        resetTurnstile();
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "确认并提交报名";
+      }
+    });
 
-		idempotencyKey = `${crypto.randomUUID()}-${crypto.getRandomValues(new Uint32Array(4)).join('')}`;
-		updateMembers();
-		void loadConfig();
-	}
+    idempotencyKey = `${crypto.randomUUID()}-${crypto.getRandomValues(new Uint32Array(4)).join("")}`;
+    updateMembers();
+    void loadConfig();
+  }
 </script>
 
 <style>
-	.registration { margin-block: 2rem; }
-	.registration > header { margin-bottom: 1.5rem; }
-	.registration h1 { margin-block: 0; font-size: var(--sl-text-4xl); font-weight: 700; line-height: 1.25; }
-	.campaign-times { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.4rem 2rem; margin-block: 0.75rem 0; padding: 0; }
-	.campaign-times div { display: flex; gap: 0.6rem; align-items: baseline; }
-	.campaign-times dt { color: var(--sl-color-gray-3); font-size: var(--sl-text-sm); }
-	.campaign-times dd { margin: 0; font-size: var(--sl-text-sm); }
-	.registration h2, .registration h3, .registration p { margin-block: 0; }
-	.registration > header > p { margin-top: 0.5rem; }
-	.status { color: var(--sl-color-gray-3); }
-	.status[data-open='true'] { color: var(--sl-color-green-high); }
-	.registration form { display: grid; gap: 1.25rem; }
-	.registration fieldset, .registration .success, .registration .notice, .registration .field[data-team-name], .registration .guidelines {
-		margin: 0; padding: 1rem; border: 1px solid var(--sl-color-hairline); border-radius: 0.5rem; background: var(--sl-color-bg-nav);
-	}
-	.registration .guidelines { margin-block: 0; }
-	.registration .guidelines .guidelines-title { margin-block: 0; font-size: var(--sl-text-h4); font-weight: 700; }
-	.registration .guidelines .guidelines-body { margin-top: 0.75rem; }
-	.registration .guidelines p { margin-block: 0.5rem; }
-	.registration .guidelines ul { margin-block: 0.5rem; padding-left: 1.25rem; }
-	.registration .guidelines li { margin-block: 0.3rem; }
-	.registration .guidelines .important { color: var(--sl-color-red-high); }
-	.intro-actions { margin-top: 1.5rem; text-align: center; }
-	.intro-actions .help { margin-top: 0.75rem; }
-	.registration legend { padding-inline: 0.35rem; font-weight: 700; }
-	.registration legend small { margin-left: 0.5rem; color: var(--sl-color-gray-3); font-weight: 400; }
-	.choice-grid, .field-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-	.choice-grid label { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.8rem; border: 1px solid var(--sl-color-hairline); border-radius: 0.4rem; cursor: pointer; }
-	.choice-grid label:has(input:checked) { border-color: var(--sl-color-accent); background: var(--sl-color-accent-low); }
-	.choice-grid span { display: grid; gap: 0.2rem; }
-	.choice-grid small, .field label small, .help { color: var(--sl-color-gray-3); }
-	.members { display: grid; gap: 1rem; }
-	.member { padding-block: 1rem; border-bottom: 1px solid var(--sl-color-hairline); }
-	.member:last-child { border-bottom: 0; }
-	.member > header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; }
-	.field { display: grid; align-content: start; gap: 0.35rem; }
-	.field label { font-weight: 600; }
-	.registration input[type='text'], .registration input[type='email'] {
-		width: 100%; box-sizing: border-box; padding: 0.65rem 0.75rem; border: 1px solid var(--sl-color-gray-5); border-radius: 0.35rem;
-		background: var(--sl-color-bg); color: var(--sl-color-text); font: inherit;
-	}
-	.registration input:focus-visible, .registration button:focus-visible { outline: 2px solid var(--sl-color-accent); outline-offset: 2px; }
-	.registration input[aria-invalid='true'] { border-color: var(--sl-color-red); }
-	.check { display: flex; gap: 0.65rem; align-items: flex-start; margin-block: 0.8rem; }
-	.check input { margin-top: 0.3rem; }
-	.registration button { padding: 0.55rem 0.9rem; border: 1px solid var(--sl-color-accent); border-radius: 0.35rem; font: inherit; font-weight: 600; cursor: pointer; }
-	.registration button.primary { margin-top: 1rem; background: var(--sl-color-accent); color: var(--sl-color-black); }
-	.registration button.secondary { background: transparent; color: var(--sl-color-text-accent); }
-	.registration button:disabled { cursor: not-allowed; opacity: 0.55; }
-	.field-error { min-height: 1.2em; color: var(--sl-color-red-high); font-size: var(--sl-text-sm); }
-	.notice { display: flex; gap: 1rem; justify-content: space-between; align-items: center; margin-block: 1rem; }
-	.notice.error { display: block; color: var(--sl-color-red-high); }
-	.success output { display: block; margin-block: 0.75rem; color: var(--sl-color-text-accent); font-size: var(--sl-text-2xl); font-weight: 700; word-break: break-all; }
-	.success dl div { display: grid; grid-template-columns: 7rem 1fr; gap: 0.75rem; }
-	.success dt { color: var(--sl-color-gray-3); }
-	.turnstile { margin-top: 1rem; min-height: 65px; }
-	[hidden] { display: none !important; }
-	@media (max-width: 42rem) { .choice-grid, .field-grid { grid-template-columns: 1fr; } .notice { align-items: flex-start; flex-direction: column; } .campaign-times { grid-template-columns: 1fr; } }
+  .registration {
+    margin-block: 2rem;
+  }
+  .registration > header {
+    margin-bottom: 1.5rem;
+  }
+  .registration h1 {
+    margin-block: 0;
+    font-size: var(--sl-text-4xl);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .campaign-times {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.4rem 2rem;
+    margin-block: 0.75rem 0;
+    padding: 0;
+  }
+  .campaign-times div {
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+  }
+  .campaign-times dt {
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-sm);
+  }
+  .campaign-times dd {
+    margin: 0;
+    font-size: var(--sl-text-sm);
+  }
+  .registration h2,
+  .registration h3,
+  .registration p {
+    margin-block: 0;
+  }
+  .registration > header > p {
+    margin-top: 0.5rem;
+  }
+  .status {
+    color: var(--sl-color-gray-3);
+  }
+  .status[data-open="true"] {
+    color: var(--sl-color-green-high);
+  }
+  .registration form {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .registration fieldset,
+  .registration .success,
+  .registration .notice,
+  .registration .field[data-team-name],
+  .registration .guidelines {
+    margin: 0;
+    padding: 1rem;
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 0.5rem;
+    background: var(--sl-color-bg-nav);
+  }
+  .registration .guidelines {
+    margin-block: 0;
+  }
+  .registration .guidelines .guidelines-title {
+    margin-block: 0;
+    font-size: var(--sl-text-h4);
+    font-weight: 700;
+  }
+  .registration .guidelines .guidelines-body {
+    margin-top: 0.75rem;
+  }
+  .registration .guidelines p {
+    margin-block: 0.5rem;
+  }
+  .registration .guidelines ul {
+    margin-block: 0.5rem;
+    padding-left: 1.25rem;
+  }
+  .registration .guidelines li {
+    margin-block: 0.3rem;
+  }
+  .registration .guidelines .important {
+    color: var(--sl-color-red-high);
+  }
+  .intro-actions {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  .intro-actions .help {
+    margin-top: 0.75rem;
+  }
+  .registration legend {
+    padding-inline: 0.35rem;
+    font-weight: 700;
+  }
+  .registration legend small {
+    margin-left: 0.5rem;
+    color: var(--sl-color-gray-3);
+    font-weight: 400;
+  }
+  .choice-grid,
+  .field-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  .choice-grid label {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 0.8rem;
+    border: 1px solid var(--sl-color-hairline);
+    border-radius: 0.4rem;
+    cursor: pointer;
+  }
+  .choice-grid label:has(input:checked) {
+    border-color: var(--sl-color-accent);
+    background: var(--sl-color-accent-low);
+  }
+  .choice-grid span {
+    display: grid;
+    gap: 0.2rem;
+  }
+  .choice-grid small,
+  .field label small,
+  .help {
+    color: var(--sl-color-gray-3);
+  }
+  .members {
+    display: grid;
+    gap: 1rem;
+  }
+  .member {
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--sl-color-hairline);
+  }
+  .member:last-child {
+    border-bottom: 0;
+  }
+  .member > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+  }
+  .field {
+    display: grid;
+    align-content: start;
+    gap: 0.35rem;
+  }
+  .field label {
+    font-weight: 600;
+  }
+  .registration input[type="text"],
+  .registration input[type="email"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.35rem;
+    background: var(--sl-color-bg);
+    color: var(--sl-color-text);
+    font: inherit;
+  }
+  .registration input:focus-visible,
+  .registration button:focus-visible {
+    outline: 2px solid var(--sl-color-accent);
+    outline-offset: 2px;
+  }
+  .registration input[aria-invalid="true"] {
+    border-color: var(--sl-color-red);
+  }
+  .check {
+    display: flex;
+    gap: 0.65rem;
+    align-items: flex-start;
+    margin-block: 0.8rem;
+  }
+  .check input {
+    margin-top: 0.3rem;
+  }
+  .registration button {
+    padding: 0.55rem 0.9rem;
+    border: 1px solid var(--sl-color-accent);
+    border-radius: 0.35rem;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .registration button.primary {
+    margin-top: 1rem;
+    background: var(--sl-color-accent);
+    color: var(--sl-color-black);
+  }
+  .registration button.secondary {
+    background: transparent;
+    color: var(--sl-color-text-accent);
+  }
+  .registration button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+  .field-error {
+    min-height: 1.2em;
+    color: var(--sl-color-red-high);
+    font-size: var(--sl-text-sm);
+  }
+  .notice {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 1rem;
+  }
+  .notice.error {
+    display: block;
+    color: var(--sl-color-red-high);
+  }
+  .success output {
+    display: block;
+    margin-block: 0.75rem;
+    color: var(--sl-color-text-accent);
+    font-size: var(--sl-text-2xl);
+    font-weight: 700;
+    word-break: break-all;
+  }
+  .success dl div {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    gap: 0.75rem;
+  }
+  .success dt {
+    color: var(--sl-color-gray-3);
+  }
+  .turnstile {
+    margin-top: 1rem;
+    min-height: 65px;
+  }
+  [hidden] {
+    display: none !important;
+  }
+  @media (max-width: 42rem) {
+    .choice-grid,
+    .field-grid {
+      grid-template-columns: 1fr;
+    }
+    .notice {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .campaign-times {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
