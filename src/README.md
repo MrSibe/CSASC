@@ -61,12 +61,10 @@ highlights:
         link: https://qm.qq.com/q/PkyaqKKv0e
 ---
 
-# 合作伙伴
-
 ::: center
 
-![CSASC 中国观天者小行星搜寻项目](/cha.png =40%x)
+# 合作伙伴
 
-![IASC 活动](/campaign.png =85%x)
+![](/campaign.png =85%x)
 
 :::

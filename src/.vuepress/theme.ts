@@ -25,8 +25,8 @@ export default hopeTheme({
   sidebar,
 
   // 页脚
-  footer: "从现在开始搜寻属于你的小行星！ | 版权所有 © 2022-2024 CSASC",
-  displayFooter: false,
+  footer: "",
+  displayFooter: true,
 
   print: false,
 
