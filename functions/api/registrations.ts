@@ -11,6 +11,13 @@ interface ExistingRegistration {
   registration_no: string;
   created_at: string;
 }
+
+interface RegistrationMember {
+  realName: string;
+  email: string;
+  qq: string;
+  organization: string;
+}
 export async function onRequestPost(context: PagesContext<PublicEnv>): Promise<Response> {
   const { request, env } = context;
   const campaign = getCampaignConfig(env);
@@ -81,7 +88,8 @@ export async function onRequestPost(context: PagesContext<PublicEnv>): Promise<R
   const registrationId = crypto.randomUUID();
   const registrationNumber = createRegistrationNumber(campaign.code);
   const createdAt = new Date().toISOString();
-  const { registrationType, teamName, members } = validation.value;
+  const { registrationType, teamName } = validation.value;
+  const members = validation.value.members as RegistrationMember[];
   const statements = [
     env.DB.prepare(
       `INSERT INTO registrations

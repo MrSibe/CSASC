@@ -1,0 +1,28 @@
+:root {
+	--sl-color-accent-low: #382b08;
+	--sl-color-accent: #e1b84f;
+	--sl-color-accent-high: #fff0bd;
+	--sl-color-bg: #0a0f1e;
+	--sl-color-bg-nav: #0d1426;
+	--sl-color-bg-sidebar: #0b1120;
+}
+
+:root[data-theme='light'] {
+	--sl-color-accent-low: #fff2c9;
+	--sl-color-accent: #765700;
+	--sl-color-accent-high: #332400;
+	--sl-color-bg: #fbfcff;
+	--sl-color-bg-nav: #ffffff;
+	--sl-color-bg-sidebar: #f5f7fb;
+}
+
+.hero img {
+	max-width: min(100%, 44rem);
+	height: auto;
+}
+
+.sl-markdown-content > img:last-child {
+	width: 100%;
+	height: auto;
+	border-radius: 0.5rem;
+}

@@ -1,6 +1,6 @@
 ---
 title: 搜寻教程
-icon: computer
+description: Astrometrica 小行星搜寻活动流程、安装配置和操作教程。
 author: 伊兹哈尔
 ---
 

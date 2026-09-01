@@ -1,17 +1,13 @@
 ---
 title: 活动介绍
-icon: lightbulb
+description: 了解中国观天者小行星搜寻项目、活动背景、参与条件和报名方式。
 ---
 
 # 中国观天者小行星搜寻项目
 
-::: center
+![中国观天者小行星搜寻项目](/chinese-logo.png)
 
-![中国观天者小行星搜寻项目](/chinese-logo.png =60%x)
-
-:::
-
-::: info 活动基本信息
+:::note[活动基本信息]
 
 - **活动全称**：中国观天者小行星搜寻项目（China Skywatcher Asteroid Search Campaign）
 - **活动简称及简写**：CSASC

@@ -2,7 +2,7 @@
 	"$schema": "./node_modules/wrangler/config-schema.json",
 	"name": "csasc",
 	"compatibility_date": "2026-09-01",
-	"pages_build_output_dir": "./src/.vuepress/dist",
+	"pages_build_output_dir": "./dist",
 	"d1_databases": [
 		{
 			"binding": "DB",

@@ -1,7 +1,9 @@
 ---
 title: 报名参与
-icon: flag
+description: 中国观天者小行星搜寻项目个人与团队报名入口。
 ---
+
+import RegistrationForm from '../../components/RegistrationForm.astro';
 
 # 中国观天者小行星搜寻项目第 15 期报名
 
@@ -13,10 +15,8 @@ icon: flag
 
 参与**团队报名**的团队人数为 2–9 人（含队长），由团队内部决定队长和队名。
 
-::: warning 重要提示
-
+:::caution[重要提示]
 一旦报名，不能退出！请务必仔细考虑是否参与活动。
-
 :::
 
 ## 报名前请确认
@@ -26,6 +26,4 @@ icon: flag
 - 资料仅用于本期活动报名、组队、活动联络和必要的历史核对，由项目管理员访问并长期保存。
 - 报名后不能自行在线查询、修改或取消。如资料有误或希望删除个人资料，请通过官方交流群联系管理员，并提供报名编号核对。
 
-<ClientOnly>
-  <RegistrationForm />
-</ClientOnly>
+<RegistrationForm />
