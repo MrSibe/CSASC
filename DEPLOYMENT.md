@@ -43,6 +43,6 @@ pnpm wrangler d1 export csasc-registrations --remote --output=csasc-registration
 ## 4. 上线验收
 
 - 检查 `/`、`/portfolio`、`/tutor`、`/application` 及相应 `.html` 地址。
-- 使用生产 Turnstile 分别提交一次个人、2 人团队和 9 人团队报名。
+- 使用生产 Turnstile 分别提交一次个人、5 人团队和 9 人团队报名。
 - 重复邮箱应收到冲突提示；使用相同幂等键重试应返回原报名编号。
 - 在独立管理 Worker 中确认能够查看、筛选和导出新报名。

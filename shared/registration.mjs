@@ -1,4 +1,4 @@
-export const TEAM_MIN_MEMBERS = 2;
+export const TEAM_MIN_MEMBERS = 5;
 export const TEAM_MAX_MEMBERS = 9;
 
 export const FIELD_LIMITS = Object.freeze({

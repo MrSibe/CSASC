@@ -29,8 +29,8 @@ test("accepts a complete individual registration", () => {
   assert.equal(result.value.members.length, 1);
 });
 
-test("accepts teams at the 2 and 9 member boundaries", () => {
-  for (const count of [2, TEAM_MAX_MEMBERS]) {
+test("accepts teams at the 5 and 9 member boundaries", () => {
+  for (const count of [5, TEAM_MAX_MEMBERS]) {
     const result = validateRegistrationPayload({
       ...individualPayload(),
       registrationType: "team",
@@ -42,8 +42,8 @@ test("accepts teams at the 2 and 9 member boundaries", () => {
   }
 });
 
-test("rejects teams outside the 2 to 9 member range", () => {
-  for (const count of [1, 10]) {
+test("rejects teams outside the 5 to 9 member range", () => {
+  for (const count of [4, 10]) {
     const result = validateRegistrationPayload({
       ...individualPayload(),
       registrationType: "team",
