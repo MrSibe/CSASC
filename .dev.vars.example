@@ -1,0 +1,2 @@
+# Cloudflare Turnstile 官方测试密钥；仅用于本地开发。
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA

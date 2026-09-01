@@ -1,0 +1,22 @@
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "csasc",
+	"compatibility_date": "2026-09-01",
+	"pages_build_output_dir": "./src/.vuepress/dist",
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "csasc-registrations",
+			"database_id": "f3dd6c2e-71ba-4638-ac8d-de33d27307dd",
+			"preview_database_id": "DB",
+			"migrations_dir": "./migrations"
+		}
+	],
+	"vars": {
+		"CAMPAIGN_CODE": "15",
+		"CAMPAIGN_TITLE": "中国观天者小行星搜寻项目第 15 期",
+		"REGISTRATION_OPENS_AT": "2026-09-01T00:00:00+08:00",
+		"REGISTRATION_CLOSES_AT": "2026-10-01T23:59:59+08:00",
+		"TURNSTILE_SITE_KEY": "0x4AAAAAAEjkglLpir4a8wHn"
+	}
+}

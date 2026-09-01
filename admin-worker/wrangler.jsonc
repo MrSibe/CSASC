@@ -1,0 +1,24 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "csasc-registration-admin",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": true
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "csasc-registrations",
+      "database_id": "f3dd6c2e-71ba-4638-ac8d-de33d27307dd"
+    }
+  ],
+  "vars": {
+    "TEAM_DOMAIN": "https://old-cake-6cd1.cloudflareaccess.com",
+    "POLICY_AUD": "51a44a33d2e3033cf619f252040be2db01e1f2089c0e336432980c95d7509b89",
+    "ADMIN_EMAILS": ""
+  }
+}

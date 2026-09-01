@@ -1,5 +1,6 @@
 import { defineClientConfig, usePageData } from "vuepress/client";
 import { onMounted, watch } from "vue";
+import RegistrationForm from "./components/RegistrationForm.vue";
 
 interface Meteor {
   x: number;
@@ -18,6 +19,9 @@ interface Meteor {
  * 两者仅在首页（路径 "/"）生效。
  */
 export default defineClientConfig({
+  enhance({ app }) {
+    app.component("RegistrationForm", RegistrationForm);
+  },
   setup() {
     // 使用 @vuepress/client 提供的 usePageData 判断首页，避免直接依赖 vue-router
     const page = usePageData();

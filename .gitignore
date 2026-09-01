@@ -1,5 +1,9 @@
-
 node_modules/
+.env
 src/.vuepress/.cache/
 src/.vuepress/.temp/
 src/.vuepress/dist/
+admin-worker/dist/
+.wrangler/
+.dev.vars
+admin-worker/.dev.vars
